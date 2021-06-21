@@ -15,6 +15,7 @@ var elFeedbackText = document.getElementById('feedback-text');
 var divAnswers = document.getElementById('answers');
 var elQuestionText = document.getElementById('question-text');
 var inpPlayerInitials = document.getElementById('player-initials');
+var elFinalScoreText = document.getElementById('final-score');
 
 
 //load questions
@@ -104,7 +105,7 @@ function loadQuestion(question){
     elQuestionText.innerText = question.question;
     question.answers.forEach( answer => {
         //create the button with value and text from the question
-        let btnAnswer = document.createElement('button');
+        const btnAnswer = document.createElement('button');
         btnAnswer.className="answer";
         btnAnswer.value = answer.id;
         btnAnswer.innerText = answer.text;
@@ -199,6 +200,8 @@ function endGame(){
     if(timer)
         window.clearInterval(timer);
 
+    elFinalScoreText.innerText = score;
+
     // show saveScore
     secIntro.style.display = 'none';
     secSaveScore.style.display = 'block';
@@ -210,11 +213,12 @@ function saveScore(){
     // first load the high score table
     let hs = JSON.parse(localStorage.getItem("QuizHighScore"));
     hs = hs ? hs : [];
-    const inserted = false;
+    let inserted = false;
     //iterate through and if the score is higher then insert
     for(i = 0; i < hs.length && !inserted; i++){
-        if(hs[i] < score){
+        if(parseInt(hs[i].score) < score){
             hs.splice(i, 0, {"player": inpPlayerInitials.value, "score": score});
+            inserted = true;
         }
     }
     if(!inserted){
