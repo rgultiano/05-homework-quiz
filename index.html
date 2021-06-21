@@ -2,35 +2,39 @@
 <html>
     <head>
         <title>Coding Quiz Challenge</title>
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
         <header>
-            <div><span><a href="#">High Score</a></span></div>
+            <div class="highscore"><span><a href="#">High Score</a></span></div>
             <div class="timer"><span>Time: </span><span id="countdown">60</span></div>
         </header>
-        <section class="intro">
-            <h1>Coding Quiz Challenge</h1>
-            <p>Text blurb for instructions</p>
-            <input type="button" value="Start" action="quizStart()">
-        </section>
-        <section class="quiz">
-            <section class="quiz-main">
-                <h2 class="question">Question Placeholder</h2>
-                <div class="answers">
-                    <input type="button" value="1. answer 1" class="answer">
-                    <input type="button" value="2. answer 2" class="answer">
-                </div>
+        <section class="main">
+            <section class="intro">
+                <h1>Coding Quiz Challenge</h1>
+                <p>Text blurb for instructions</p>
+                <button type="button" formaction="quizStart()">Start</button>
             </section>
-            <section class="quiz-feedback">
-                <span class="feedback-text"></span>
+            <section class="quiz">
+                <section class="quiz-main">
+                    <h2 class="question">Question Placeholder</h2>
+                    <div class="answers">
+                        <button value="1" class="answer">1. Answer 1</button>
+                        <button value="2" class="answer">2. Answer 2</button>
+                    </div>
+                </section>
+                <section class="quiz-feedback">
+                    <span class="feedback-text">Placeholder feeback text!</span>
+                </section>
             </section>
-        </section>
-        <section class="save-score">
-            <h2>All done!</h2>
-            <p>Input your initials and save your score</p>
-            <label>Enter initials: </label>
-            <input type="text" id="score-initials">
-            <input type="button" value="Submit">
+            <section class="save-score">
+                <h2>All done!</h2>
+                <p>Input your initials and save your score</p>
+                <label>Enter initials: </label>
+                <input type="text" id="score-initials">
+                <button value="Submit">Submit</button>
+            </section>
         </section>
     </body>
 </html>

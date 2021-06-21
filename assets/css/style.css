@@ -1,0 +1,114 @@
+:root {
+
+}
+
+/*********************
+General element styles
+**********************/
+
+body {
+    line-height: 1.5;
+
+}
+
+button{
+    border-radius: 3px;
+    background-color: purple;
+    color:white;
+}
+
+button:hover{
+    background-color: rgb(133, 72, 133);
+}
+
+h1{
+    font-weight: bold;
+    font-size: x-large;
+    margin-bottom: .5em;
+}
+
+h2{
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: .5em;
+}
+p{
+    margin-bottom: .5em;
+}
+
+/*****
+Header format
+*****/
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+/*****
+Style main content
+*****/
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding-top: 2em;
+}
+
+.main section{
+    width: 800px;
+}
+
+/********
+Intro section
+********/
+.intro{
+    text-align:center;
+}
+
+/********
+Quiz section
+********/
+
+.quiz-main{
+    padding-bottom: .5em;
+}
+
+.quiz-feedback{
+    border-top: solid;
+    border-color: lightgrey;
+    padding-top: .5em;
+}
+
+.answers{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.answer{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.feedback-text{
+    font-style: italic;
+}
+
+/*****
+Init states
+*****/
+.quiz{
+    display: none;
+}
+.quiz-feedback{
+    display: none;
+}
+
+.save-score{
+    display: none;
+}
