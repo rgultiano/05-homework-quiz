@@ -11,30 +11,31 @@
             <div class="timer"><span>Time: </span><span id="countdown">60</span></div>
         </header>
         <section class="main">
-            <section class="intro">
-                <h1>Coding Quiz Challenge</h1>
+            <section id="intro">
+                <h1 >Coding Quiz Challenge</h1>
                 <p>Text blurb for instructions</p>
-                <button type="button" formaction="quizStart()">Start</button>
+                <button type="button" onclick="quizInit()">Start</button>
             </section>
-            <section class="quiz">
-                <section class="quiz-main">
-                    <h2 class="question">Question Placeholder</h2>
-                    <div class="answers">
+            <section id="quiz">
+                <section id="quiz-main">
+                    <h2 id="question-text">Question Placeholder</h2>
+                    <div id="answers">
                         <button value="1" class="answer">1. Answer 1</button>
                         <button value="2" class="answer">2. Answer 2</button>
                     </div>
                 </section>
-                <section class="quiz-feedback">
-                    <span class="feedback-text">Placeholder feeback text!</span>
-                </section>
             </section>
-            <section class="save-score">
+            <section id="save-score">
                 <h2>All done!</h2>
                 <p>Input your initials and save your score</p>
                 <label>Enter initials: </label>
                 <input type="text" id="score-initials">
                 <button value="Submit">Submit</button>
             </section>
+            <section id="quiz-feedback">
+                <span id="feedback-text">Placeholder feeback text!</span>
+            </section>
         </section>
+        <script src="assets/js/quiz.js"></script>
     </body>
 </html>
