@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coding Quiz Challenge</title>
+    </head>
+    <body>
+        <header>
+            <div><span><a href="#">High Score</a></span></div>
+            <div class="timer"><span>Time: </span><span id="countdown">60</span></div>
+        </header>
+        <section class="intro">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Text blurb for instructions</p>
+            <input type="button" value="Start" action="quizStart()">
+        </section>
+        <section class="quiz">
+            <section class="quiz-main">
+                <h2 class="question">Question Placeholder</h2>
+                <div class="answers">
+                    <input type="button" value="1. answer 1" class="answer">
+                    <input type="button" value="2. answer 2" class="answer">
+                </div>
+            </section>
+            <section class="quiz-feedback">
+                <span class="feedback-text"></span>
+            </section>
+        </section>
+        <section class="save-score">
+            <h2>All done!</h2>
+            <p>Input your initials and save your score</p>
+            <label>Enter initials: </label>
+            <input type="text" id="score-initials">
+            <input type="button" value="Submit">
+        </section>
+    </body>
+</html>
