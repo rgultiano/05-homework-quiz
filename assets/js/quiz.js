@@ -3,6 +3,7 @@ var currQuestion;
 var currQuestionIndex;
 var incorrectPenalty = 10;
 var score = 60;
+var timer;
 
 // init element vars
 var elScore = document.getElementById('countdown');
@@ -13,6 +14,7 @@ var secQuizFeedback = document.getElementById('quiz-feedback');
 var elFeedbackText = document.getElementById('feedback-text');
 var divAnswers = document.getElementById('answers');
 var elQuestionText = document.getElementById('question-text');
+var inpPlayerInitials = document.getElementById('player-initials');
 
 
 //load questions
@@ -185,19 +187,42 @@ function hideFeedback(){
 }
 
 
-// start the game
+// start the game by initialising game values
 function startGame(){
     currQuestionIndex = -1;
     nextQuestion();
     score = 60;
-    window.setInterval(countdownScore, 1000);
+    timer = window.setInterval(countdownScore, 1000);
 }
 
 function endGame(){
-    window.clearInterval(countdownScore);
-    
+    if(timer)
+        window.clearInterval(timer);
+
     // show saveScore
     secIntro.style.display = 'none';
     secSaveScore.style.display = 'block';
     secQuiz.style.display = 'none';
+}
+
+// save the score with the given initials
+function saveScore(){
+    // first load the high score table
+    let hs = JSON.parse(localStorage.getItem("QuizHighScore"));
+    hs = hs ? hs : [];
+    const inserted = false;
+    //iterate through and if the score is higher then insert
+    for(i = 0; i < hs.length && !inserted; i++){
+        if(hs[i] < score){
+            hs.splice(i, 0, {"player": inpPlayerInitials.value, "score": score});
+        }
+    }
+    if(!inserted){
+        // wasn't higher than any score! put at the end
+        hs.push({"player": inpPlayerInitials.value, "score": score})
+    }
+
+    // save the score
+    localStorage.setItem("QuizHighScore", JSON.stringify(hs));
+    window.location.href = 'highscore.html';
 }
